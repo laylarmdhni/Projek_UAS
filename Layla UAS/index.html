@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Perpustakaan Digital </title>
+  </head>
+  <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <body class="bg-gray-100">
+      <!-- Header -->
+    <header class="bg-blue-900 sticky top-0 z-10">
+      <nav class="text-white w-11/12 md:container mx-auto py-4 flex justify-between items-center">
+        <a href="#" class="text-3xl font-bold">Perpustakaan Digital Ly</a>
+        <ul id="menu" class="menu hidden md:flex md:bg-blue-900 md:relative md:top-0 md:divide-y-0 md:w-auto flex-col md:flex-row md:items-center">
+          <li class="px-7 py-1 hover:text-gray-300"><a href="#collection">Koleksi Buku</a></li>
+          <li class="px-7 py-1 hover:text-gray-300"><a href="#about">Tentang Kami</a></li>
+          <li class="px-7 py-1 hover:text-gray-300"><a href="#pendaftaran">Pendaftaran</a></li>
+          <li class="px-7 py-1 hover:text-gray-300"><a href="#services">Layanan</a></li>
+          <li class="px-7 py-1 hover:text-gray-300 md:hover:text-white">
+            <a href="#search" class="md:py-2 md:px-5 md:rounded-xl md:hover: text-white">Cari Buku</a>
+          </li>
+      </nav>
+    </header>
+    
+    <!-- Beranda -->
+    <section id="beranda" class="bg-gradient-to-r from-blue-900 via-indigo-800 to-blue-900 py-20 text-center text-white flex items-center justify-center min-h-screen" style="background-image: url('https://example.com/your-gif.gif'); background-size: cover; background-position: center;">
+      <div class="text-center">
+        <!-- Logo -->
+        <img src="logo.png" alt="Logo Perpustakaan Digital" class="mx-auto mb-6 w-32 md:w-40">
+        
+        <!-- Teks Selamat Datang -->
+        <h2 class="text-4xl font-bold mb-6">Selamat Datang di Perpustakaan Digital</h2>
+        <p class="text-white mb-6">Temukan berbagai koleksi buku digital dan referensi yang dapat Anda akses kapan saja dan di mana saja!</p>
+      </div>
+    </section>
+    
+
+<!-- Pencarian Buku -->
+<section id="search" class="py-20 bg-gray-100">
+  <div class="w-11/12 md:container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">Cari Buku Favorit Anda</h2>
+    <input
+      id="search-input"
+      type="text"
+      placeholder="Masukkan judul buku atau penulis..."
+      class="w-full sm:w-2/3 md:w-1/2 p-4 rounded-lg border border-gray-300 mb-6"/>
+    <button
+      id="search-button"
+      class="bg-yellow-500 text-black py-2 px-6 rounded-xl hover:bg-yellow-600">
+      Cari Buku
+    </button>
+    <div id="search-results" class="mt-6"></div>
+  </div>
+</section>
+
+<!-- Musik Latar dan Jam Operasional -->
+<div class="flex justify-center py-10">
+  <div class="bg-blue-900 text-white p-8 rounded-lg shadow-xl w-full max-w-4xl">
+    <h2 class="text-2xl font-extrabold text-center mb-6">Musik Perpustakaan dan Jam Operasional</h2>
+    
+    <div class="w-full mb-10">
+      <h3 class="text-lg font-bold mb-2">Musik Latar</h3>
+      <audio autoplay loop controls class="w-full rounded">
+        <source src="lagu.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung pemutar audio.
+      </audio>
+    </div>
+    
+    <div class="flex justify-between space-x-6">
+      <!-- Perpustakaan Digital -->
+      <div class="bg-blue-700 p-6 rounded-md w-1/2">
+        <h4 class="text-md font-semibold underline mb-2">Perpustakaan Digital</h4>
+        <p>Tersedia 24 Jam, 7 Hari Seminggu</p>
+      </div>
+      
+      <!-- Perpustakaan Fisik -->
+      <div class="bg-blue-700 p-6 rounded-md w-1/2">
+        <h4 class="text-md font-semibold underline mb-2">Perpustakaan Fisik</h4>
+        <ul class="list-disc list-inside">
+          <li>Senin - Jumat: 08:00 - 17:00</li>
+          <li>Sabtu: 09:00 - 14:00</li>
+          <li>Minggu dan Hari Libur: Tutup</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   <!-- Koleksi Buku -->
+<section id="collection" class="py-20 bg-gray-100">
+    <div class="w-11/12 md:container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Koleksi Buku</h2>
+      <p class="text-gray-600 mb-6">Temukan berbagai koleksi buku menarik yang dapat meningkatkan pengetahuan Anda. Jelajahi koleksi terbaru kami di bawah ini!</p>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Koleksi Buku 1 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto2.png" alt="Buku 1" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Pemrograman Web untuk Pemula</h4>
+            <p class="text-gray-500 mb-4">Panduan lengkap untuk memulai karir di dunia pemrograman web dengan bahasa HTML, CSS, dan JavaScript.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 2 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto3.png" alt="Buku 2" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Dasar-Dasar Jaringan Komputer</h4>
+            <p class="text-gray-500 mb-4">Buku ini mengupas tuntas tentang konsep dasar jaringan komputer dan cara membangunnya secara efektif.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 3 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto4.png" alt="Buku 3" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Teknologi Blockchain: Dasar dan Implementasi</h4>
+            <p class="text-gray-500 mb-4">Buku yang memberikan wawasan tentang teknologi blockchain dan cara kerjanya dalam dunia digital.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 4 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto5.png" alt="Buku 4" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Kecerdasan Buatan dalam Dunia Nyata</h4>
+            <p class="text-gray-500 mb-4">Eksplorasi tentang bagaimana kecerdasan buatan digunakan di berbagai sektor industri dan kehidupan sehari-hari.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 5 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto1.png" alt="Buku 5" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Pengantar Sistem Operasi</h4>
+            <p class="text-gray-500 mb-4">Memahami sistem operasi dan bagaimana perangkat lunak ini mengelola perangkat keras komputer dan sumber daya.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 6 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto6.png" alt="Buku 6" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Desain Grafis untuk Pemula</h4>
+            <p class="text-gray-500 mb-4">Panduan dasar untuk memulai desain grafis menggunakan perangkat lunak populer seperti Adobe Photoshop dan Illustrator.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 7 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto7.png" alt="Buku 7" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Data Science untuk Pemula</h4>
+            <p class="text-gray-500 mb-4">Buku ini mengajarkan dasar-dasar data science dan cara menggunakan Python untuk analisis data.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 8 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto8.png" alt="Buku 8" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Teknologi Cloud Computing</h4>
+            <p class="text-gray-500 mb-4">Buku ini memberikan penjelasan tentang konsep cloud computing dan bagaimana mengimplementasikannya di dunia bisnis.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 9 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto9.png" alt="Buku 9" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Keamanan Jaringan Komputer</h4>
+            <p class="text-gray-500 mb-4">Buku ini membahas tentang pentingnya keamanan jaringan dan cara melindungi data dalam sistem jaringan komputer.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 10 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto10.png" alt="Buku 10" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Analisis Data dengan R</h4>
+            <p class="text-gray-500 mb-4">Pelajari cara menggunakan bahasa pemrograman R untuk melakukan analisis data dan visualisasi statistik.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 11 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto11.png" alt="Buku 11" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Manajemen Proyek SI</h4>
+            <p class="text-gray-500 mb-4">Panduan tentang manajemen proyek teknologi informasi, termasuk teknik dan alat untuk memimpin proyek TI dengan sukses.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+  
+        <!-- Koleksi Buku 12 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="foto12.png" alt="Buku 12" class="w-full h-56 object-cover">
+          <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3">Strategi Digital Marketing</h4>
+            <p class="text-gray-500 mb-4">Pelajari strategi digital marketing yang dapat digunakan untuk meningkatkan visibilitas dan keterlibatan pelanggan secara online.</p>
+            <a href="#" class="text-yellow-500 hover:text-yellow-600">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+<!-- Koleksi Buku Cerita -->
+<section id="koleksi" class="py-16 bg-gray-100 text-gray-900">
+  <div class="w-11/12 md:container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Koleksi Buku Cerita</h2>
+    <p class="text-gray-700 mb-8">Nikmati berbagai buku cerita menarik untuk semua usia!</p>
+
+    <!-- Daftar Buku -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- Buku 1 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="Timunmas.jpeg" alt="Judul Buku 1" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Legenda Timun Mas</h3>
+        <p class="text-sm text-gray-600">Kisah rakyat Jawa tentang keberanian Timun Mas melawan raksasa.</p>
+      </div>
+
+      <!-- Buku 2 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="kancil.jpeg" alt="Judul Buku 2" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Kancil dan Buaya</h3>
+        <p class="text-sm text-gray-600">Cerita si Kancil yang cerdik menyelamatkan diri dari buaya.</p>
+      </div>
+
+      <!-- Buku 3 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="bawang.jpeg" alt="Judul Buku 3" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Bawang Merah dan Bawang Putih</h3>
+        <p class="text-sm text-gray-600">Dongeng klasik tentang kebaikan yang selalu menang atas kejahatan.</p>
+      </div>
+
+      <!-- Buku 4 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="malin.jpeg" alt="Judul Buku 4" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Si Malin Kundang</h3>
+        <p class="text-sm text-gray-600">Kisah seorang anak yang durhaka kepada ibunya dan mendapatkan karma.</p>
+      </div>
+
+      <!-- Buku 5 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="Harry.jpg" alt="Judul Buku 4" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Harry Potter and the Sorcerer's Stone</h3>
+        <p class="text-sm text-gray-600">Novel Harry Potter tergolong ke dalam genre sastra fantasi, dengan berbagai kekuatan sihirnya.</p>
+      </div>
+
+      <!-- Buku 6 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="hujan.jpg" alt="Judul Buku 4" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Hujan</h3>
+        <p class="text-sm text-gray-600">Novel ini berlatar di tahun 2042–2050 dan menceritakan kisah Lail, seorang perempuan yang menjadi yatim piatu akibat bencana alam.</p>
+      </div>
+
+      <!-- Buku 7 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="Bumi.jpg" alt="Judul Buku 4" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Bumi</h3>
+        <p class="text-sm text-gray-600">Novel Bumi karya Tere Liye bercerita tentang petualangan tiga remaja yang memiliki kekuatan khusus, yaitu Raib, Seli, dan Ali.</p>
+      </div>
+
+      <!-- Buku 8 -->
+      <div class="book-card bg-white p-4 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transform transition duration-300 ease-in-out">
+        <img src="happily.jpg" alt="Judul Buku 4" class="w-full h-32 object-cover mb-2 rounded-lg">
+        <h3 class="text-lg font-semibold mb-1">Happily Ever After</h3>
+        <p class="text-sm text-gray-600">Novel Happily Ever After karya Winna Efendi menceritakan perjalanan hidup seorang perempuan bernama Lulu sejak masa remajanya. Novel ini mengisahkan tentang persahabatan, percintaan remaja, dan keluarga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Buku Elektronik -->
+<section id="buku-elektronik" class="py-20 bg-gray-100">
+  <div class="w-11/12 md:container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">Koleksi Buku Elektronik</h2>
+    <p class="text-gray-600 mb-10">Temukan berbagai buku elektronik yang dapat diunduh dan dibaca di perangkat Anda. Akses kapan saja, di mana saja.</p>
+
+    <!-- Koleksi Buku Elektronik -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Buku Elektronik 1 -->
+      <div class="shadow-lg bg-white p-5 rounded-lg bubble-effect">
+        <img src="foto13.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Elektronik 1" />
+        <h3 class="text-xl font-semibold mb-2">Panduan Pemrograman Python</h3>
+        <p class="text-gray-600 mb-4">Pelajari pemrograman Python dari dasar hingga aplikasi nyata dengan buku elektronik ini.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Unduh Buku</a>
+      </div>
+      <!-- Buku Elektronik 2 -->
+      <div class="shadow-lg bg-white p-5 rounded-lg bubble-effect">
+        <img src="foto14.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Elektronik 2" />
+        <h3 class="text-xl font-semibold mb-2">E-commerce untuk Pemula</h3>
+        <p class="text-gray-600 mb-4">Panduan lengkap memulai bisnis online dengan platform e-commerce populer.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Unduh Buku</a>
+      </div>
+      <!-- Buku Elektronik 3 -->
+      <div class="shadow-lg bg-white p-5 rounded-lg bubble-effect">
+        <img src="foto15.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Elektronik 3" />
+        <h3 class="text-xl font-semibold mb-2">Dasar-dasar Web Development</h3>
+        <p class="text-gray-600 mb-4">Buku ini memberikan pemahaman mendalam tentang pengembangan web modern menggunakan HTML, CSS, dan JavaScript.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Unduh Buku</a>
+      </div>
+      <!-- Buku Elektronik 4 -->
+      <div class="shadow-lg bg-white p-5 rounded-lg bubble-effect">
+        <img src="foto16.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Elektronik 4" />
+        <h3 class="text-xl font-semibold mb-2">Kepemimpinan dalam Bisnis</h3>
+        <p class="text-gray-600 mb-4">Buku ini mengajarkan keterampilan kepemimpinan yang diperlukan untuk menjadi pemimpin yang efektif dalam dunia bisnis.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Unduh Buku</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+ <!-- Buku Referensi -->
+<section id="buku-referensi" class="py-20">
+  <div class="w-11/12 md:container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Koleksi Buku Referensi</h2>
+    <p class="text-gray-600 mb-10">Buku referensi untuk mendalami berbagai bidang ilmu pengetahuan, sejarah, dan topik-topik khusus lainnya.</p>
+  
+    <!-- Koleksi Buku Referensi -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Buku Referensi 1 -->
+      <div class="shadow-xl bg-white p-5 rounded-lg transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-gray-100 bubble-effect">
+        <img src="foto17.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Referensi 1" />
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Ensiklopedia Ilmu Pengetahuan</h3>
+        <p class="text-gray-600 mb-4">Buku referensi ini mencakup berbagai topik ilmu pengetahuan dari berbagai bidang seperti sains, teknologi, dan kedokteran.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Baca Buku</a>
+      </div>
+      <!-- Buku Referensi 2 -->
+      <div class="shadow-xl bg-white p-5 rounded-lg transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-gray-100 bubble-effect">
+        <img src="foto18.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Referensi 2" />
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Sejarah Dunia</h3>
+        <p class="text-gray-600 mb-4">Buku ini memberikan gambaran menyeluruh tentang sejarah dunia dari zaman kuno hingga era modern.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Baca Buku</a>
+      </div>
+      <!-- Buku Referensi 3 -->
+      <div class="shadow-xl bg-white p-5 rounded-lg transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-gray-100 bubble-effect">
+        <img src="foto19.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Referensi 3" />
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Kamus Lengkap Bahasa Inggris</h3>
+        <p class="text-gray-600 mb-4">Buku referensi bahasa ini membantu Anda mempelajari kosa kata dan ungkapan dalam Bahasa Inggris dengan mudah.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Baca Buku</a>
+      </div>
+      <!-- Buku Referensi 4 -->
+      <div class="shadow-xl bg-white p-5 rounded-lg transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-gray-100 bubble-effect">
+        <img src="foto20.png" class="w-full h-48 object-cover rounded-md mb-4" alt="Buku Referensi 4" />
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Geografi Dunia</h3>
+        <p class="text-gray-600 mb-4">Panduan lengkap untuk memahami geografi dunia, termasuk peta, iklim, dan lokasi-lokasi penting.</p>
+        <a href="#" class="text-yellow-500 hover:underline">Baca Buku</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+ <!-- Pendaftaran Kartu Anggota -->
+<section id="pendaftaran" class="py-20 bg-gray-100">
+  <div class="w-11/12 md:container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">Daftar untuk Mendapatkan Kartu Anggota</h2>
+    <p class="text-gray-600 mb-6">Isi formulir di bawah ini untuk menjadi anggota perpustakaan digital kami dan nikmati akses penuh ke semua koleksi buku.</p>
+
+    <!-- Formulir Pendaftaran -->
+    <form action="#" method="POST" class="bg-white p-8 rounded-lg shadow-lg mx-auto max-w-lg">
+      <div class="mb-6">
+        <label for="nama" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nama lengkap" required />
+      </div>
+
+      <div class="mb-6">
+        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan alamat email" required />
+      </div>
+
+      <div class="mb-6">
+        <label for="alamat" class="block text-gray-700 font-semibold mb-2">Alamat</label>
+        <textarea id="alamat" name="alamat" class="w-full p-3 border border-gray-300 rounded-lg" rows="4" placeholder="Masukkan alamat lengkap" required></textarea>
+      </div>
+
+      <div class="mb-6">
+        <label for="telepon" class="block text-gray-700 font-semibold mb-2">Nomor Telepon</label>
+        <input type="text" id="telepon" name="telepon" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Masukkan nomor telepon" required />
+      </div>
+
+      <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600">Daftar Sekarang</button>
+    </form>
+
+    <!-- Informasi Setelah Pendaftaran -->
+    <p class="mt-6 text-gray-500">Setelah mendaftar, Anda akan mendapatkan kartu anggota digital dan akses penuh ke koleksi buku kami. Kami akan mengirimkan detailnya ke alamat email Anda.</p>
+
+    <!-- Statistik Anggota -->
+    <div class="mt-10 flex justify-between">
+      <!-- Grafik Pie untuk Jenis Kelamin -->
+      <div class="w-1/2 pr-4">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Banyaknya anggota berdasarkan gender</h3>
+        <div class="w-full max-w-md mx-auto mb-10">
+          <canvas id="genderChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Grafik Pie untuk Daerah -->
+      <div class="w-1/2 pl-4">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Banyaknya anggota berdasarkan daerah</h3>
+        <div class="w-full max-w-md mx-auto">
+          <canvas id="regionChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tentang Kami -->
+<section id="about" class="py-20 bg-gray-100">
+  <div class="w-11/12 md:container mx-auto flex flex-col md:flex-row items-center">
+    <!-- Logo -->
+    <div class="flex-shrink-0 mb-8 md:mb-0 md:w-1/3 text-center">
+      <img src="logo.png" alt="Logo Perpustakaan Digital" class="h-48 w-auto mx-auto">
+    </div>
+
+    <!-- Penjelasan Tentang Kami -->
+    <div class="md:ml-8 md:w-2/3 text-left">
+      <h2 class="text-5xl font-extrabold text-gray-900 mb-6">Tentang Perpustakaan Digital</h2>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Perpustakaan Digital kami adalah platform revolusioner yang membuka pintu ke dunia pengetahuan tanpa batas. Dengan ribuan buku elektronik di berbagai genre, Anda dapat mengakses koleksi kami kapan saja, di mana saja. 
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Kami menghadirkan koleksi sumber daya informasi digital yang dirancang untuk memberikan kenyamanan dan kemudahan. Dari buku hingga jurnal ilmiah, semua dapat diakses melalui internet dengan fitur-fitur canggih seperti pencarian cepat, kemampuan unduh, dan dukungan aksesibilitas untuk pengguna disabilitas.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Nikmati manfaat seperti akses informasi yang lebih luas, penghematan waktu dan biaya, serta dukungan pembelajaran jarak jauh. Bersama kami, Anda dapat memperluas cakrawala pengetahuan secara ramah lingkungan dan modern.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Layanan Perpustakaan Digital -->
+<section id="services" class="py-20 bg-blue-900 text-white relative overflow-hidden">
+  <div class="w-11/12 md:container mx-auto text-center relative z-10">
+    <h2 class="text-4xl font-bold mb-6">Layanan Kami</h2>
+    <p class="text-gray-300 mb-6">Layanan Perpustakaan Ly</p>
+
+    <!-- Daftar Layanan -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Peminjaman Digital</h3>
+        <p>Anda dapat meminjam buku elektronik (e-book) dan membaca langsung di perangkat Anda.</p>
+      </div>
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Keanggotaan Online</h3>
+        <p>Anda dapat mengakses berbagai Buku, fitur, atau yang lainnya yang tidak tersedia untuk non-anggota.</p>
+      </div>
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Katalog Online</h3>
+        <p>Melalui katalog online, pengguna dapat mencari buku dan sumber daya lainnya </p>
+      </div>
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Koleksi buku-elektronik</h3>
+        <p>Buku dalam format digital yang dapat dibaca melalui perangkat elektronik seperti komputer, tablet, atau smartphone.</p>
+      </div>
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Koleksi buku-referensi</h3>
+        <p>Buku yang berisi informasi khusus, seperti kamus, ensiklopedia, dan buku tahunan.</p>
+      </div>
+      <div class="service-card bg-white text-blue-900 p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Koleksi Buku</h3>
+        <p>Pilih koleksi buku yang anda sukai, ada banyak koleksi buku cerita dan buku lainnnya</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="py-5 text-center text-white bg-blue-900">
+      <p>&copy; Perpustakaan Digital Ly.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
